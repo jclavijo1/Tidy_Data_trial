@@ -4,10 +4,9 @@ library(tidyverse)
 library(janitor)
 
 read.csv()
-X2020_Cohort_L4G_Midpoint_Assessment <- X2020_Cohort_L4G_Midpoint_Assessment_Text_Raw_xlsx %>% 
+X2020_Cohort_Midpoint_Assessment <- X2020_Cohort_DeID_Text %>% 
   select(-contains("Other")) %>% 
-  select(-starts_with("...")) %>% 
-  pivot_longer(cols = - "Open-Ended Response...10",
+  pivot_longer(cols = - "ID",
                names_to = "Question",
                values_to = "Response")
 
